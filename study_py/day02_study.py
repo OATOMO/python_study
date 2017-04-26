@@ -43,4 +43,30 @@ alien_0 = {'color':'green','point':5}
 #alien_0['point'] = 6
 #print (alien_0)
 #----------------------------------
+#创建多行的键值
+#languages = {
+#        'atom':'c/c++',
+#        'lz':'??',
+#        'shixi':'python'
+#        }
+#for name in languages:
+#    print('Atom' + 
+#    'love' +
+#    languages[name].title()
+#    )
+#----------------------------------
+#for中用items()访问字典的键和值
+#for key,value in alien_0.items():
+#    print("\nkey:"+ key)
+#    print("value:"+str(value))
+#----------------------------------
+#for中用keys来遍历所以键
+#for name in alien_0.keys():
+#    print(name)
+#    print(alien_0[name])
+#----------------------------------
+#for中用values来遍历所以值
+#for value in alien_0.values():
+#    print(str(value))
+#----------------------------------
 
