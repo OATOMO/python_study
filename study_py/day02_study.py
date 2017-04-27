@@ -69,4 +69,43 @@ alien_0 = {'color':'green','point':5}
 #for value in alien_0.values():
 #    print(str(value))
 #----------------------------------
+#用set来剔除重复的集合
+#languages = {
+#	'atom':'c/c++',
+#	'tom':'c/c++',
+#	'lz':'python'
+#	}
+#for language in set(languages.values()):
+#	print (language)
+#----------------------------------
+#字典列表
+#alien_1 = {'color':'red','point':'7'}
+#alien_2 = {'color':'yollw','point':'8'}
+#lists = [alien_0,alien_1,alien_2]
+#
+#for alien in lists:
+#	print (alien)
+#----------------------------------
+#lists = []
+#for alien_number in range(30):
+#	new_alien = {'color':'green','point':'5'}
+#	lists.append(new_alien)
+#
+#for alien in lists[:5]:
+#	print (alien.values())
+#
+#print ("Have " + str(len(lists)) + "alien")
+#---------------------------------
+languages = {
+	'atom':['python','c/c++'],
+	'tom':['c','shell'],
+	'lz':['nothing']
+	}
+
+for name,language in languages.items():
+	print ("\n" + name.title() + 
+			"'s love are:")
+	for lang in language:
+		print (lang)
+
 
