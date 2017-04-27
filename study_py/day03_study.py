@@ -21,9 +21,21 @@
 #while num < 5:
 #	num = int(input('continue:'))
 #------------------------------------------
-
+#num = 0
+#while num < 5:
+#	print(str(num))
+#	if num == 2:
+#		break				#用break来终止循环
+#	num += 1				#continue类似
+#------------------------------------------
+names = ['lz','atom','lz','tom','lz']
+while 'lz' in names:
+	names.remove('lz')
+print (names)
 
 
 	
 	
+
+
 
