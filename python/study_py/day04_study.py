@@ -79,6 +79,33 @@
 # print (unprinted)
 # print (completed)
 #--------------------------------------------
+# def print_name(unprinted,completed):
+#     while unprinted:
+#         current = unprinted.pop()
+#         print ('name' + current)
+
+#         completed.append(current)
+
+# def show_name(completed):
+#     print ("-----show-----")
+#     for name in completed:
+#         print (name)
+
+# unprinted = ['atom','lz','tom']
+# completed = []
+
+# print_name(unprinted[:],completed)  #用切片传递的是副本,不会改变列表本身
+# show_name(completed)
+# print ("-------------")
+# print (unprinted)
+# print (completed)
+#--------------------------------------------
+# def make_pizza(*topings):  #创建一个元组,将可变参数全放入
+#     for pizza in topings:
+#         print ("-" + pizza)
+
+# make_pizza('pepper')
+# make_pizza('atom','lz')
 #--------------------------------------------
 #--------------------------------------------
 #--------------------------------------------
