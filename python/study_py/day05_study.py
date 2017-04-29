@@ -25,15 +25,31 @@ class Dog():
 # print (my_dog.type)
 #--------------------------------------------
         #   super   #
-class Papa(Dog):
-    def __init__(self,name,age):
-        super().__init__(name,age)
+# class Papa(Dog):
+#     def __init__(self,name,age):
+#         super().__init__(name,age)
 
-    def look(self):
-        print(self.name +" look her.")
+#     def look(self):
+#         print(self.name +" look her.")
         
-papa = Papa('Papa',2)
-papa.look()
+# papa = Papa('Papa',2)
+# papa.look()
 #--------------------------------------------
+# from collections import OrderedDict #导入这个标准类
+# #有序的字典类
+# favorite_languages = OrderedDict()
+
+# favorite_languages['tom'] = 'Python'
+# favorite_languages['atom'] = 'c/c++'
+# favorite_languages['lz'] = 'ass'
+
+# for name,language in favorite_languages.items():
+#     print (name + 'favorite language is:' + language)
+#--------------------------------------------
+# from random import randint    #生成随机数的类
+# x = randint(1,6)
+# print(str(x))
+#--------------------------------------------
+
 #--------------------------------------------
 #--------------------------------------------
