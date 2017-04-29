@@ -107,9 +107,33 @@
 # make_pizza('pepper')
 # make_pizza('atom','lz')
 #--------------------------------------------
-#--------------------------------------------
-#--------------------------------------------
-#--------------------------------------------
+#两个*号表示接受的形参是字典
+# def make_user(first_name,last_name,**suer_info):
+#     profile = {}
+#     profile['name'] = (first_name + last_name).title()
+#     for key,value in suer_info.items():
+#         profile[key] = value
+#     return profile
 
+# user_profile = make_user('a','tom', type = 'man',age = '23')
+# print (user_profile)
+#--------------------------------------------
+#导入模块,只需一条import语句并指定模块名,就可以使用模块中的所以函数
+#可以用下面的语法来使用任何函数:
+#1. import module
+#   module_name.function_name()
+#2. 导入特定函数
+#   from module_name import function_name
+#3. 用as给函数指定别名,把函数别名指定为mp
+#   from module_name import function_name as mp
+#   mp()
+#4. 用as给模块指定别名,指定为mn
+#   import module_name as mn
+#   mn.function()
+#--------------------------------------------
+#--------------------------------------------
+from tqdm import tqdm
+for i in tqdm(range(1,10)):
+    print ('.')
 
 
