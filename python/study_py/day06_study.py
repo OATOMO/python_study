@@ -39,5 +39,23 @@ filename = './pi_digit.txt'
 # except ZeroDivisionError:
 #     print ("you can't divide by zero!")
 #---------------------------------------------
+#用来处理找不到文件的异常
+# try:
+#     with open('yom.txt') as file_object:
+#         contents = file_object.read()
+# except FileNotFoundError:
+#     msg = 'Sorry,the file' " does not exis."
+#     print(msg)
 #---------------------------------------------
+filename = 'day04_study.py'
+try:
+    with open(filename) as file_obj:
+        contents = file_obj.read()
+except FileNotFoundError:
+    msg = 'Sorry,the file ' + filename + 'does not exist.'
+    print (msg)
+else:
+    words = contents.split() #将字符串切分成单词列表
+    num_words = len(words)
+    print("the file " + filename + "has about " + str(num_words) + "words.")
 #---------------------------------------------
