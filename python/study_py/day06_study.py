@@ -47,15 +47,37 @@ filename = './pi_digit.txt'
 #     msg = 'Sorry,the file' " does not exis."
 #     print(msg)
 #---------------------------------------------
-filename = 'day04_study.py'
-try:
-    with open(filename) as file_obj:
-        contents = file_obj.read()
-except FileNotFoundError:
-    msg = 'Sorry,the file ' + filename + 'does not exist.'
-    print (msg)
-else:
-    words = contents.split() #将字符串切分成单词列表
-    num_words = len(words)
-    print("the file " + filename + "has about " + str(num_words) + "words.")
+# filename = 'day04_study.py'
+# try:
+#     with open(filename) as file_obj:
+#         contents = file_obj.read()
+# except FileNotFoundError:
+#     msg = 'Sorry,the file ' + filename + 'does not exist.'
+#     print (msg)
+# else:
+#     words = contents.split() #将字符串切分成单词列表
+#     num_words = len(words)
+#     print("the file " + filename + "has about " + str(num_words) + "words.")
 #---------------------------------------------
+        #   数据存储json    #
+#---------------------------------------------
+#用json.dump()来存储数据
+# import json
+# numbers = [1,2,3,4,5,6,7]
+
+# filename = 'numbers.json'
+# with open(filename,'w') as f_obj:
+#     json.dump(numbers,f_obj)
+#---------------------------------------------
+#用json.load()来取出数据
+import json
+
+filename = 'numbers.json'
+with open(filename) as f_obj:
+    numbers = json.load(f_obj)
+
+print (numbers)
+#---------------------------------------------
+#---------------------------------------------
+
+
