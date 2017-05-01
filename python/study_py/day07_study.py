@@ -33,6 +33,17 @@
 # ->+     :匹配多次,但至少出现一次
 # ->?     :将重复0次或1次,表示可有可无
 #-----------------------------------------
+# RE的方法:
+#     match():决定字符串是否在刚开始的位置匹配
+#     match对象的方法:
+#         ->group():返回被匹配的字符串。              p = re.compile('...')
+#         ->start():返回匹配开始的位置                m = p.match()
+#         ->end()：返回匹配到的结束位置               print (group())
+#         ->span()：返回一个元组，包含（start，end）。
+#     search():扫描字符串，找到字符在其中的位置
+#     findall();找到所有子串，并把它们作为一个列表返回
+#     finditer():找到所有子串，并把它们作为一个迭代器返回
+#-----------------------------------------
 import re 
 
 # s = r'abc'
@@ -74,8 +85,7 @@ import re
 #-----------------------------------------
 
 # 编译时添加属性
-csvt_re = re.compile(r'csvt',re.I)  #不区分大小写的属性
-print (csvt_re.findall('CSVt'))
-
-
-
+re = re.compile(r'csvt',re.I)  #不区分大小写的属性
+re_m = re.match('csvt i')
+    print (re_m.end())
+    print (re_m.span())
