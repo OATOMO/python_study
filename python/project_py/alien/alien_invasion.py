@@ -2,10 +2,11 @@
 #-----------------------------------
     #   a alien invasion game
 #-----------------------------------
-import sys  #用来关闭游戏
 import pygame
 
 from settings import Settings
+from ship import Ship
+import game_function as gf
 
 def run_game():
     """
@@ -15,18 +16,12 @@ def run_game():
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width,ai_settings.screen_height))    #创建一个名为screen的窗口
 
+    ship = Ship(screen)
     #开始游戏的主循环
     while True:
-        #监视游戏的鼠标和键盘
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-
-        #每次循环都重绘屏幕
-        screen.fill(ai_settings.bg_color)
-        #让最近绘制的屏幕可见
-        pygame.display.flip()
+        gf.check_event(ship)
+        ship.updata()
+        gf.updata_screen(ai_settings,screen,ship)
 
 run_game()
 #-----------------------------------
-
