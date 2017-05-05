@@ -6,7 +6,7 @@ import pygame
 
 from settings import Settings
 from ship import Ship
-from pygame import Group
+from pygame.sprite import Group
 import game_function as gf
 
 
@@ -28,6 +28,11 @@ def run_game():
         gf.check_events(ai_settings,screen,ship,bullets)
         ship.updata()
         bullets.update()
+        #删除以出屏幕的子弹
+        for bullet in bullets.copy():
+            if bullet.rect.bottom <= 0:
+                bullets.remove(bullet)
+        print (len (bullets))
         gf.updata_screen(ai_settings,screen,ship,bullets)
 
 run_game()
