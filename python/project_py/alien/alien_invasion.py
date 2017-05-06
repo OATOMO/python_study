@@ -27,13 +27,9 @@ def run_game():
     while True:
         gf.check_events(ai_settings,screen,ship,bullets)
         ship.updata()
-        bullets.update()
-        #删除以出屏幕的子弹
-        for bullet in bullets.copy():
-            if bullet.rect.bottom <= 0:
-                bullets.remove(bullet)
-        print (len (bullets))
+        gf.update_bullets(bullets)
         gf.updata_screen(ai_settings,screen,ship,bullets)
+
 
 run_game()
 #-----------------------------------

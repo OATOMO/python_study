@@ -14,10 +14,9 @@ def check_keydown_events(event,ai_settings,screen,ship,bullets):
     elif event.key == pygame.K_DOWN:
         ship.moving_down = True
     elif event.key == pygame.K_SPACE:
-        #创建一颗子弹
-        if len(bullets) <= ai_settings.bullets_allowed:
-            new_bullet = Bullet(ai_settings,screen,ship)
-            bullets.add(new_bullet)
+        fire_bullet(ai_settings,screen,ship,bullets)
+    elif event.key == pygame.K_q:
+        sys.exit()
 
 def check_keyup_events(event,ai_settings,screen,ship,bullets):
     "检查松开事件"
@@ -54,3 +53,24 @@ def updata_screen(ai_settings,screen,ship,bullets):
     ship.blitme()
     #让最近绘制的屏幕可见
     pygame.display.flip()
+
+
+def update_bullets(bullets):
+    """
+    更新子弹位置,并删除以消失的子弹
+    """
+    #更新子弹位置
+    bullets.update()
+    #删除以出屏幕的子弹
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)
+    print (len (bullets))
+ 
+
+def fire_bullet(ai_settings,screen,ship,bullets):
+        #如果子弹没到上限,就创建一颗子弹
+        if len(bullets) <= ai_settings.bullets_allowed:
+            new_bullet = Bullet(ai_settings,screen,ship)
+            bullets.add(new_bullet)
+
