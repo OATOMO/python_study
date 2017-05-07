@@ -27,5 +27,20 @@ class Alien(Sprite):
     def blitme(self):
         """绘制外星人"""
         self.screen.blit(self.image,self.rect)
+
+    def check_edges(self):
+        """检测单个是否到达边缘"""
+        screen_rect = self.screen.get_rect()
+        if self.rect.right >= screen_rect.right:
+            return True
+        if self.rect.left < 0:
+            return True
+
+
+    def update(self):
+        """移动外星人"""
+        self.x += (self.ai_settings.alien_speed_factor * 
+                self.ai_settings.fleet_direction)
+        self.rect.x = self.x
 #-----------------------------------
 #-----------------------------------
