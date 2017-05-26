@@ -17,6 +17,8 @@ class Settings():
 
         #飞船的速度
         self.ship_speed_factor = 1.5
+        #生命
+        self.ship_limit = 3
 
         #子弹
         self.bullet_speed_factor = 3
