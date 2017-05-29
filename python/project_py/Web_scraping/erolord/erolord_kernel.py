@@ -4,6 +4,8 @@ import urllib
 from urllib.error import HTTPError
 from bs4 import BeautifulSoup 
 from tqdm import tqdm
+import sys
+import time
 import re
 #coding=utf-8
 
@@ -19,7 +21,18 @@ image_url_first = ""
 #-----------------------------------------
 url_link = url_main
 
+
 def getHtml(url):
+    html = openHtml(url)
+    count = 10
+    while not html and count:
+        time.sleep(0.5)
+        html = openHtml(url)
+    if not html:
+        sys.exit()
+    return html
+
+def openHtml(url):
     try:
         html = urlopen(url)
         return html
@@ -30,6 +43,8 @@ def getHtml(url):
     except ConnectionResetError as e:
         print ("reset connect")
         return None
+
+
 def getbs4(html):
     try:
         bs_obj = BeautifulSoup(html.read(),"xml")
@@ -58,8 +73,14 @@ def cutIndex(str):
         last_i += 1
     return str[start_i:last_i]
     
-def getImage(html):
+def getImage(html,path):
+    print ("html is -> " + str(html))
+    print ("path is -> " + str(path))
     res_c = re.compile(image_url_last)
+    if html:
+        print ("\n*** have html\n")
+    else:
+        print ("\n*** not html\n")
     image_url_last_list = res_c.findall(str(html.read()))
 
     for link_raw in tqdm(image_url_last_list):
@@ -75,7 +96,7 @@ def getImage(html):
         for image in jpg_raw_list:
             i = 0
             #下载图片
-            urllib.request.urlretrieve( "http://erolord.com"+image,cutIndex(image) +".jpg")    
+            urllib.request.urlretrieve( "http://erolord.com"+image,path + "/" + cutIndex(image) +".jpg")    
             #print ("http://erolord.com"+image)   
 
         print (jpg_raw_list)
@@ -84,7 +105,7 @@ def getImage(html):
 def run():
     """运行爬虫"""
     html = getHtml(url_link)
-    getImage(html)
+    getImage(html,"./")
     #bs_obj = getbs4(html)
     # print (getTitle(bs_obj))
 
@@ -102,5 +123,5 @@ def run():
 #     print (jpg_url_list)
 
 
-run()
+#run()
 
