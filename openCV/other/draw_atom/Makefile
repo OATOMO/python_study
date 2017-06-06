@@ -14,7 +14,7 @@ CC=g++
 CFLAGS+=`pkg-config --cflags opencv`
 LDFLAGS+=`pkg-config --libs opencv`
 
-PROG=test1
+PROG=draw_atom
 OBJS=$(PROG).o
 
 .PHONY:	all clean
@@ -26,5 +26,5 @@ $(PROG): $(OBJS)
 
 all: $(PROG)
 
-clean_all:
+clean:
 	rm -f $(OBJS) $(PROG) *.o

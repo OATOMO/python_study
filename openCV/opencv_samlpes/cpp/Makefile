@@ -26,5 +26,5 @@ $(PROG): $(OBJS)
 
 all: $(PROG)
 
-clean_all:
+clean:
 	rm -f $(OBJS) $(PROG) *.o
