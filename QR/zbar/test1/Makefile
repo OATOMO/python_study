@@ -21,7 +21,7 @@ OBJS=$(PROG).o
 
 .PHONY:	all clean
 $(PROG): $(OBJS)
-	$(CC) -o $(PROG) $(OBJS) $(LDFLAGS)
+	$(CC) -o $(PROG) $(OBJS) $(LDFLAGS) -lzbar
 
 %.o: %.cpp
 	$(CC) -c $(CFLAGS) $<
