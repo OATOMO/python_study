@@ -30,14 +30,22 @@ int main(int argc,char ** argv){
 	cv::Mat image_src = cv::imread(argv[1],0);
 	cv::Mat image;
 	image_src.copyTo(image);
+	//---------
+	resize(image,image,Size(image.cols/4,image.rows/4),(0,0),(0,0),3);
+	//---------
 
 	cv::namedWindow("Image");
 	cv::imshow("Image",image);
 	cv::setMouseCallback("Image",onMouse,reinterpret_cast<void *>(&image));//注册鼠标回调函数
 	cv::waitKey();
 
-	start = getTickCount();
+	//滤波
+	GaussianBlur(image,image,Size(3,3),0);
+	cv::imshow("Image",image);
+	cv::waitKey();
+
 	//二值化
+	start = getTickCount();
 	cv::threshold(image,image,100, 	//临界值
 					255,			//最大值
 					CV_THRESH_BINARY);//模式   
@@ -46,7 +54,37 @@ int main(int argc,char ** argv){
 	cout << "处理二值化用时" << duration << "s" <<  endl;
 
 	cv::waitKey();
-
+	//------------------------------膨胀腐烛
+	cv::Mat element = getStructuringElement(2,cv::Size(9,9));
+	for (int i = 0;i < 10;i++){
+		erode(image,image,element);
+		i++;
+	}
+	cv::Mat image1;
+	cv::erode(image,image1,element);
+	image1 = image-image1;
+	cv::imshow("边界",image1);
+	cv::imshow("Image",image);
+	cv::waitKey();
+		//-------------寻找直线
+	vector<Vec2f>lines;
+	cv::HoughLines(image1,lines,1,CV_PI/150,180,0,0);
+	cv::Mat DrawLine = cv::Mat::zeros(image1.size(),CV_8UC1);
+	for (int i = 0;i < lines.size();i++){
+		float rho = lines[i][0];
+		float theta = lines[i][1];
+		Point pt1,pt2;
+		double a=cos(theta),b=sin(theta);
+		double x0=a*rho,y0=b*rho;
+		pt1.x = cvRound(x0+1000*(-b));
+		pt1.y = cvRound(y0+1000*a);
+		pt2.x = cvRound(x0-1000*(-b));
+		pt2.y = cvRound(y0-1000*a);
+		cv::line(DrawLine,pt1,pt2,cv::Scalar(255),1,CV_AA);
+	}
+	cv::imshow("Found line",DrawLine);
+	cv::waitKey();
+	//------------------------------scanner
 	zbar::ImageScanner scanner;
 	scanner.set_config(ZBAR_NONE,ZBAR_CFG_ENABLE,1);
 
@@ -72,9 +110,9 @@ int main(int argc,char ** argv){
 		cout << "decoded " << symbol->get_type_name()
 			 <<" symbol \"" << symbol->get_data() << '"' << endl;  
 	}  
-	cout << "strTemp -> " << strTemp << endl;
+	//cout << "strTemp -> " << strTemp << endl;
 
-	cout << "format " << procImage.get_format() << endl;
+	//cout << "format " << procImage.get_format() << endl;
 
 return 0;
 }
@@ -91,3 +129,6 @@ void onMouse(int event,int x,int y,int flags,void *param){
 	}
 
 }
+
+
+	
