@@ -19,7 +19,7 @@ int initCamera(struct video_dev * pvd){
 #endif
    	setFmt(pvd);	
 	//whiteBalance(pvd);
-	setExposure(pvd,4);//自动曝光
+    //setExposure(pvd,4);//自动曝光
 	reqBufs(pvd);
 return 0;
 }
@@ -93,16 +93,16 @@ int setFmt(struct video_dev *pvd){
   	
 #endif
 
-    struct v4l2_streamparm *setfps;
-    setfps = (struct v4l2_streamparm *) calloc(1, sizeof(struct v4l2_streamparm));
-    memset(setfps, 0, sizeof(struct v4l2_streamparm));
-    setfps->type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-    setfps->parm.capture.timeperframe.numerator = 1;
-    setfps->parm.capture.timeperframe.denominator = 60;
-    setfps->parm.capture.readbuffers = 1;
-    retval = ioctl(pvd->fb, VIDIOC_S_PARM, setfps);
-    if (retval != 0)
-        printf("frame rate set faild !!!!!!!!!\n");
+//    struct v4l2_streamparm *setfps;
+//    setfps = (struct v4l2_streamparm *) calloc(1, sizeof(struct v4l2_streamparm));
+//    memset(setfps, 0, sizeof(struct v4l2_streamparm));
+//    setfps->type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+//    setfps->parm.capture.timeperframe.numerator = 1;
+//    setfps->parm.capture.timeperframe.denominator = 60;
+//    setfps->parm.capture.readbuffers = 1;
+//    retval = ioctl(pvd->fb, VIDIOC_S_PARM, setfps);
+//    if (retval != 0)
+//        printf("frame rate set faild !!!!!!!!!\n");
 return retval;
 }
 

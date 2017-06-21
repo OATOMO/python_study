@@ -1,0 +1,221 @@
+.
+├── aztec
+│   ├── AztecDetectorResult.cpp
+│   ├── AztecDetectorResult.h
+│   ├── AztecReader.cpp
+│   ├── AztecReader.h
+│   ├── decoder
+│   │   ├── Decoder.cpp
+│   │   └── Decoder.h
+│   └── detector
+│       ├── Detector.cpp
+│       └── Detector.h
+├── BarcodeFormat.cpp
+├── BarcodeFormat.h
+├── Binarizer.cpp
+├── Binarizer.h
+├── BinaryBitmap.cpp
+├── BinaryBitmap.h
+├── ChecksumException.cpp
+├── ChecksumException.h
+├── common
+│   ├── Array.h
+│   ├── BitArray.cpp
+│   ├── BitArray.h
+│   ├── BitArrayIO.cpp
+│   ├── BitMatrix.cpp
+│   ├── BitMatrix.h
+│   ├── BitSource.cpp
+│   ├── BitSource.h
+│   ├── CharacterSetECI.cpp
+│   ├── CharacterSetECI.h
+│   ├── Counted.h
+│   ├── DecoderResult.cpp
+│   ├── DecoderResult.h
+│   ├── detector
+│   │   ├── JavaMath.h
+│   │   ├── MathUtils.h
+│   │   ├── MonochromeRectangleDetector.cpp
+│   │   ├── MonochromeRectangleDetector.h
+│   │   ├── WhiteRectangleDetector.cpp
+│   │   └── WhiteRectangleDetector.h
+│   ├── DetectorResult.cpp
+│   ├── DetectorResult.h
+│   ├── GlobalHistogramBinarizer.cpp
+│   ├── GlobalHistogramBinarizer.h
+│   ├── GreyscaleLuminanceSource.cpp
+│   ├── GreyscaleLuminanceSource.h
+│   ├── GreyscaleRotatedLuminanceSource.cpp
+│   ├── GreyscaleRotatedLuminanceSource.h
+│   ├── GridSampler.cpp
+│   ├── GridSampler.h
+│   ├── HybridBinarizer.cpp
+│   ├── HybridBinarizer.h
+│   ├── IllegalArgumentException.cpp
+│   ├── IllegalArgumentException.h
+│   ├── PerspectiveTransform.cpp
+│   ├── PerspectiveTransform.h
+│   ├── Point.h
+│   ├── reedsolomon
+│   │   ├── GenericGF.cpp
+│   │   ├── GenericGF.h
+│   │   ├── GenericGFPoly.cpp
+│   │   ├── GenericGFPoly.h
+│   │   ├── ReedSolomonDecoder.cpp
+│   │   ├── ReedSolomonDecoder.h
+│   │   ├── ReedSolomonException.cpp
+│   │   └── ReedSolomonException.h
+│   ├── Str.cpp
+│   ├── Str.h
+│   ├── StringUtils.cpp
+│   └── StringUtils.h
+├── datamatrix
+│   ├── DataMatrixReader.cpp
+│   ├── DataMatrixReader.h
+│   ├── decoder
+│   │   ├── BitMatrixParser.cpp
+│   │   ├── BitMatrixParser.h
+│   │   ├── DataBlock.cpp
+│   │   ├── DataBlock.h
+│   │   ├── DecodedBitStreamParser.cpp
+│   │   ├── DecodedBitStreamParser.h
+│   │   ├── Decoder.cpp
+│   │   └── Decoder.h
+│   ├── detector
+│   │   ├── CornerPoint.cpp
+│   │   ├── CornerPoint.h
+│   │   ├── Detector.cpp
+│   │   ├── DetectorException.cpp
+│   │   ├── DetectorException.h
+│   │   └── Detector.h
+│   ├── Version.cpp
+│   └── Version.h
+├── DecodeHints.cpp
+├── DecodeHints.h
+├── Exception.cpp
+├── Exception.h
+├── FormatException.cpp
+├── FormatException.h
+├── IllegalStateException.h
+├── InvertedLuminanceSource.cpp
+├── InvertedLuminanceSource.h
+├── LuminanceSource.cpp
+├── LuminanceSource.h
+├── multi
+│   ├── ByQuadrantReader.cpp
+│   ├── ByQuadrantReader.h
+│   ├── GenericMultipleBarcodeReader.cpp
+│   ├── GenericMultipleBarcodeReader.h
+│   ├── MultipleBarcodeReader.cpp
+│   ├── MultipleBarcodeReader.h
+│   └── qrcode
+│       ├── detector
+│       │   ├── MultiDetector.cpp
+│       │   ├── MultiDetector.h
+│       │   ├── MultiFinderPatternFinder.cpp
+│       │   └── MultiFinderPatternFinder.h
+│       ├── QRCodeMultiReader.cpp
+│       └── QRCodeMultiReader.h
+├── MultiFormatReader.cpp
+├── MultiFormatReader.h
+├── NotFoundException.h
+├── oned
+│   ├── CodaBarReader.cpp
+│   ├── CodaBarReader.h
+│   ├── Code128Reader.cpp
+│   ├── Code128Reader.h
+│   ├── Code39Reader.cpp
+│   ├── Code39Reader.h
+│   ├── Code93Reader.cpp
+│   ├── Code93Reader.h
+│   ├── EAN13Reader.cpp
+│   ├── EAN13Reader.h
+│   ├── EAN8Reader.cpp
+│   ├── EAN8Reader.h
+│   ├── ITFReader.cpp
+│   ├── ITFReader.h
+│   ├── MultiFormatOneDReader.cpp
+│   ├── MultiFormatOneDReader.h
+│   ├── MultiFormatUPCEANReader.cpp
+│   ├── MultiFormatUPCEANReader.h
+│   ├── OneDReader.cpp
+│   ├── OneDReader.h
+│   ├── OneDResultPoint.cpp
+│   ├── OneDResultPoint.h
+│   ├── UPCAReader.cpp
+│   ├── UPCAReader.h
+│   ├── UPCEANReader.cpp
+│   ├── UPCEANReader.h
+│   ├── UPCEReader.cpp
+│   └── UPCEReader.h
+├── pdf417
+│   ├── decoder
+│   │   ├── BitMatrixParser.cpp
+│   │   ├── BitMatrixParser.h
+│   │   ├── DecodedBitStreamParser.cpp
+│   │   ├── DecodedBitStreamParser.h
+│   │   ├── Decoder.cpp
+│   │   ├── Decoder.h
+│   │   └── ec
+│   │       ├── ErrorCorrection.cpp
+│   │       ├── ErrorCorrection.h
+│   │       ├── ModulusGF.cpp
+│   │       ├── ModulusGF.h
+│   │       ├── ModulusPoly.cpp
+│   │       └── ModulusPoly.h
+│   ├── detector
+│   │   ├── Detector.cpp
+│   │   ├── Detector.h
+│   │   ├── LinesSampler.cpp
+│   │   └── LinesSampler.h
+│   ├── PDF417Reader.cpp
+│   └── PDF417Reader.h
+├── qrcode
+│   ├── decoder
+│   │   ├── BitMatrixParser.cpp
+│   │   ├── BitMatrixParser.h
+│   │   ├── DataBlock.cpp
+│   │   ├── DataBlock.h
+│   │   ├── DataMask.cpp
+│   │   ├── DataMask.h
+│   │   ├── DecodedBitStreamParser.cpp
+│   │   ├── DecodedBitStreamParser.h
+│   │   ├── Decoder.cpp
+│   │   ├── Decoder.h
+│   │   ├── Mode.cpp
+│   │   └── Mode.h
+│   ├── detector
+│   │   ├── AlignmentPattern.cpp
+│   │   ├── AlignmentPatternFinder.cpp
+│   │   ├── AlignmentPatternFinder.h
+│   │   ├── AlignmentPattern.h
+│   │   ├── Detector.cpp
+│   │   ├── Detector.h
+│   │   ├── FinderPattern.cpp
+│   │   ├── FinderPatternFinder.cpp
+│   │   ├── FinderPatternFinder.h
+│   │   ├── FinderPattern.h
+│   │   ├── FinderPatternInfo.cpp
+│   │   └── FinderPatternInfo.h
+│   ├── ErrorCorrectionLevel.cpp
+│   ├── ErrorCorrectionLevel.h
+│   ├── FormatInformation.cpp
+│   ├── FormatInformation.h
+│   ├── QRCodeReader.cpp
+│   ├── QRCodeReader.h
+│   ├── Version.cpp
+│   └── Version.h
+├── Reader.cpp
+├── ReaderException.h
+├── Reader.h
+├── Result.cpp
+├── Result.h
+├── ResultIO.cpp
+├── ResultPointCallback.cpp
+├── ResultPointCallback.h
+├── ResultPoint.cpp
+├── ResultPoint.h
+├── tree.text
+└── ZXing.h
+
+20 directories, 198 files
