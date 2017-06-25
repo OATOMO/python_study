@@ -33,8 +33,8 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = i686-pc-linux-gnu
-host_triplet = i686-pc-linux-gnu
+build_triplet = x86_64-unknown-linux-gnu
+host_triplet = x86_64-unknown-linux-gnu
 bin_PROGRAMS = $(am__EXEEXT_2) $(am__EXEEXT_3)
 check_PROGRAMS = test/test_decode$(EXEEXT) test/test_convert$(EXEEXT) \
 	$(am__EXEEXT_4) test/test_proc$(EXEEXT) test/test_cpp$(EXEEXT) \
@@ -58,8 +58,8 @@ DIST_COMMON = README $(am__configure_deps) $(am__dist_doc_DATA_DIST) \
 	NEWS TODO config/compile config/config.guess \
 	config/config.rpath config/config.sub config/depcomp \
 	config/install-sh config/ltmain.sh config/missing
-#am__append_1 = include/zbar/zbargtk.h
-#am__append_2 = include/zbar/QZBar.h include/zbar/QZBarImage.h
+am__append_1 = include/zbar/zbargtk.h
+am__append_2 = include/zbar/QZBar.h include/zbar/QZBarImage.h
 am__append_3 = zbar/decoder/ean.h zbar/decoder/ean.c
 am__append_4 = zbar/decoder/code128.h zbar/decoder/code128.c
 am__append_5 = zbar/decoder/code39.h zbar/decoder/code39.c
@@ -88,26 +88,26 @@ am__append_13 = zbar/processor/posix.h zbar/processor/posix.c
 ##am__append_17 = -lvfw32
 am__append_18 = zbar/video/null.c
 am__append_19 = zbar/jpeg.c
-#am__append_20 = zbar/processor/x.c \
-#    zbar/window/x.h zbar/window/x.c zbar/window/ximage.c
+am__append_20 = zbar/processor/x.c \
+    zbar/window/x.h zbar/window/x.c zbar/window/ximage.c
 
-#am__append_21 = $(X_CFLAGS)
-#am__append_22 = $(X_LIBS)
-#am__append_23 = $(X_PRE_LIBS) -lX11 $(X_EXTRA_LIBS)
-##am__append_24 = zbar/window/xv.c
-##am__append_25 = $(XV_LIBS)
-#am__append_26 = zbar/window/win.h zbar/window/win.c \
-#    zbar/window/dib.c
+am__append_21 = $(X_CFLAGS)
+am__append_22 = $(X_LIBS)
+am__append_23 = $(X_PRE_LIBS) -lX11 $(X_EXTRA_LIBS)
+am__append_24 = zbar/window/xv.c
+am__append_25 = $(XV_LIBS)
+##am__append_26 = zbar/window/win.h zbar/window/win.c \
+##    zbar/window/dib.c
 
 # zbar/window/vfw.c -lvfw32
-#am__append_27 = -lgdi32 -lwinmm
-am__append_28 = zbar/processor/null.c zbar/window/null.c
-#am__append_29 = zbarimg/zbarimg
+##am__append_27 = -lgdi32 -lwinmm
+#am__append_28 = zbar/processor/null.c zbar/window/null.c
+am__append_29 = zbarimg/zbarimg
 # automake bug in "monolithic mode"?
-#am__append_30 = zbarimg/.libs/zbarimg
-##am__append_31 = zbarimg/zbarimg.rc
-##am__append_32 = zbarimg/zbarimg-rc.o
-#am__append_33 = test/barcodetest.py
+am__append_30 = zbarimg/.libs/zbarimg
+#am__append_31 = zbarimg/zbarimg.rc
+#am__append_32 = zbarimg/zbarimg-rc.o
+am__append_33 = test/barcodetest.py
 #am__append_34 = zbarcam/zbarcam
 # automake bug in "monolithic mode"?
 #am__append_35 = zbarcam/.libs/zbarcam
@@ -115,21 +115,21 @@ am__append_28 = zbar/processor/null.c zbar/window/null.c
 ##am__append_37 = zbarcam/zbarcam-rc.o
 am__append_38 = python/zbar.la
 am__append_39 = python/test/barcode.png python/test/test_zbar.py
-#am__append_40 = gtk/libzbargtk.la
-#am__append_41 = gtk/zbarmarshal.c gtk/zbarmarshal.h
-#am__append_42 = gtk/zbarmarshal.c gtk/zbarmarshal.h
-#am__append_43 = gtk/zbarmarshal.list
-#am__append_44 = zbar-gtk.pc
-#am__append_45 = pygtk/zbarpygtk.la
-#am__append_46 = pygtk/zbarpygtk.c pygtk/zbarpygtk.defs
-#am__append_47 = pygtk/zbarpygtk.c pygtk/zbarpygtk.defs
-#am__append_48 = pygtk/zbarpygtk.override
-#am__append_49 = qt/libzbarqt.la
-#am__append_50 = $(nodist_qt_libzbarqt_la_SOURCES) \
-#	$(nodist_test_test_qt_SOURCES)
-#am__append_51 = $(nodist_qt_libzbarqt_la_SOURCES) \
-#	$(nodist_test_test_qt_SOURCES)
-#am__append_52 = zbar-qt.pc
+am__append_40 = gtk/libzbargtk.la
+am__append_41 = gtk/zbarmarshal.c gtk/zbarmarshal.h
+am__append_42 = gtk/zbarmarshal.c gtk/zbarmarshal.h
+am__append_43 = gtk/zbarmarshal.list
+am__append_44 = zbar-gtk.pc
+am__append_45 = pygtk/zbarpygtk.la
+am__append_46 = pygtk/zbarpygtk.c pygtk/zbarpygtk.defs
+am__append_47 = pygtk/zbarpygtk.c pygtk/zbarpygtk.defs
+am__append_48 = pygtk/zbarpygtk.override
+am__append_49 = qt/libzbarqt.la
+am__append_50 = $(nodist_qt_libzbarqt_la_SOURCES) \
+	$(nodist_test_test_qt_SOURCES)
+am__append_51 = $(nodist_qt_libzbarqt_la_SOURCES) \
+	$(nodist_test_test_qt_SOURCES)
+am__append_52 = zbar-qt.pc
 #am__append_53 = plugin/libzbarplugin.la
 
 #check_PROGRAMS += test/test_window
@@ -138,10 +138,10 @@ am__append_39 = python/test/barcode.png python/test/test_zbar.py
 #test_test_window_LDADD = zbar/libzbar.la $(AM_LDADD)
 #am__append_54 = test/test_video
 am__append_55 = test/test_jpeg
-#am__append_56 = test/dbg_scan
-#am__append_57 = test/test_gtk
-#am__append_58 = test/test_qt
-#am__append_59 = doc/man/zbarimg.1
+am__append_56 = test/dbg_scan
+am__append_57 = test/test_gtk
+am__append_58 = test/test_qt
+am__append_59 = doc/man/zbarimg.1
 #am__append_60 = doc/man/zbarcam.1
 #am__append_61 = README.windows
 subdir = .
@@ -173,21 +173,21 @@ libLTLIBRARIES_INSTALL = $(INSTALL)
 pyexecLTLIBRARIES_INSTALL = $(INSTALL)
 LTLIBRARIES = $(lib_LTLIBRARIES) $(pyexec_LTLIBRARIES)
 am__DEPENDENCIES_1 =
-#gtk_libzbargtk_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-#	zbar/libzbar.la
+gtk_libzbargtk_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	zbar/libzbar.la
 am__dist_gtk_libzbargtk_la_SOURCES_DIST = gtk/zbargtk.c \
 	gtk/zbargtkprivate.h
 am__dirstamp = $(am__leading_dot)dirstamp
-#dist_gtk_libzbargtk_la_OBJECTS =  \
-#	gtk/gtk_libzbargtk_la-zbargtk.lo
-#nodist_gtk_libzbargtk_la_OBJECTS =  \
-#	gtk/gtk_libzbargtk_la-zbarmarshal.lo
+dist_gtk_libzbargtk_la_OBJECTS =  \
+	gtk/gtk_libzbargtk_la-zbargtk.lo
+nodist_gtk_libzbargtk_la_OBJECTS =  \
+	gtk/gtk_libzbargtk_la-zbarmarshal.lo
 gtk_libzbargtk_la_OBJECTS = $(dist_gtk_libzbargtk_la_OBJECTS) \
 	$(nodist_gtk_libzbargtk_la_OBJECTS)
 gtk_libzbargtk_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 	$(gtk_libzbargtk_la_LDFLAGS) $(LDFLAGS) -o $@
-#am_gtk_libzbargtk_la_rpath = -rpath $(libdir)
+am_gtk_libzbargtk_la_rpath = -rpath $(libdir)
 plugin_libzbarplugin_la_LIBADD =
 am__plugin_libzbarplugin_la_SOURCES_DIST = plugin/plugin.c
 #am_plugin_libzbarplugin_la_OBJECTS =  \
@@ -198,20 +198,20 @@ plugin_libzbarplugin_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 	$(plugin_libzbarplugin_la_LDFLAGS) $(LDFLAGS) -o $@
 #am_plugin_libzbarplugin_la_rpath = -rpath $(libdir)
-#pygtk_zbarpygtk_la_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) \
-#	gtk/libzbargtk.la
+pygtk_zbarpygtk_la_DEPENDENCIES =  \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) \
+	gtk/libzbargtk.la
 am__dist_pygtk_zbarpygtk_la_SOURCES_DIST = pygtk/zbarpygtkmodule.c
-#dist_pygtk_zbarpygtk_la_OBJECTS = pygtk/pygtk_zbarpygtk_la-zbarpygtkmodule.lo
-#nodist_pygtk_zbarpygtk_la_OBJECTS = pygtk/pygtk_zbarpygtk_la-zbarpygtk.lo
+dist_pygtk_zbarpygtk_la_OBJECTS = pygtk/pygtk_zbarpygtk_la-zbarpygtkmodule.lo
+nodist_pygtk_zbarpygtk_la_OBJECTS = pygtk/pygtk_zbarpygtk_la-zbarpygtk.lo
 pygtk_zbarpygtk_la_OBJECTS = $(dist_pygtk_zbarpygtk_la_OBJECTS) \
 	$(nodist_pygtk_zbarpygtk_la_OBJECTS)
 pygtk_zbarpygtk_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 	$(pygtk_zbarpygtk_la_LDFLAGS) $(LDFLAGS) -o $@
-#am_pygtk_zbarpygtk_la_rpath = -rpath \
-#	$(pyexecdir)
+am_pygtk_zbarpygtk_la_rpath = -rpath \
+	$(pyexecdir)
 python_zbar_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	zbar/libzbar.la
 am__python_zbar_la_SOURCES_DIST = python/zbarmodule.c \
@@ -236,25 +236,25 @@ python_zbar_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 	$(python_zbar_la_LDFLAGS) $(LDFLAGS) -o $@
 am_python_zbar_la_rpath = -rpath $(pyexecdir)
-#qt_libzbarqt_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-#	zbar/libzbar.la
+qt_libzbarqt_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	zbar/libzbar.la
 am__qt_libzbarqt_la_SOURCES_DIST = qt/QZBar.cpp qt/QZBarThread.h \
 	qt/QZBarThread.cpp
-#am_qt_libzbarqt_la_OBJECTS =  \
-#	qt/qt_libzbarqt_la-QZBar.lo \
-#	qt/qt_libzbarqt_la-QZBarThread.lo
-#nodist_qt_libzbarqt_la_OBJECTS =  \
-#	qt/qt_libzbarqt_la-moc_QZBar.lo \
-#	qt/qt_libzbarqt_la-moc_QZBarThread.lo
+am_qt_libzbarqt_la_OBJECTS =  \
+	qt/qt_libzbarqt_la-QZBar.lo \
+	qt/qt_libzbarqt_la-QZBarThread.lo
+nodist_qt_libzbarqt_la_OBJECTS =  \
+	qt/qt_libzbarqt_la-moc_QZBar.lo \
+	qt/qt_libzbarqt_la-moc_QZBarThread.lo
 qt_libzbarqt_la_OBJECTS = $(am_qt_libzbarqt_la_OBJECTS) \
 	$(nodist_qt_libzbarqt_la_OBJECTS)
 qt_libzbarqt_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
 	$(CXXFLAGS) $(qt_libzbarqt_la_LDFLAGS) $(LDFLAGS) -o $@
-#am_qt_libzbarqt_la_rpath = -rpath $(libdir)
-#am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1)
-##am__DEPENDENCIES_3 = $(am__DEPENDENCIES_1)
+am_qt_libzbarqt_la_rpath = -rpath $(libdir)
+am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
+am__DEPENDENCIES_3 = $(am__DEPENDENCIES_1)
 zbar_libzbar_la_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__append_12) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_1)
@@ -308,16 +308,16 @@ am__objects_8 = zbar/processor/zbar_libzbar_la-posix.lo
 ##am__objects_11 = zbar/video/zbar_libzbar_la-vfw.lo
 am__objects_12 = zbar/video/zbar_libzbar_la-null.lo
 am__objects_13 = zbar/zbar_libzbar_la-jpeg.lo
-#am__objects_14 = zbar/processor/zbar_libzbar_la-x.lo \
-#	zbar/window/zbar_libzbar_la-x.lo \
-#	zbar/window/zbar_libzbar_la-ximage.lo
-##am__objects_15 =  \
-##	zbar/window/zbar_libzbar_la-xv.lo
-#am__objects_16 =  \
-#	zbar/window/zbar_libzbar_la-win.lo \
-#	zbar/window/zbar_libzbar_la-dib.lo
-am__objects_17 = zbar/processor/zbar_libzbar_la-null.lo \
-	zbar/window/zbar_libzbar_la-null.lo
+am__objects_14 = zbar/processor/zbar_libzbar_la-x.lo \
+	zbar/window/zbar_libzbar_la-x.lo \
+	zbar/window/zbar_libzbar_la-ximage.lo
+am__objects_15 =  \
+	zbar/window/zbar_libzbar_la-xv.lo
+##am__objects_16 =  \
+##	zbar/window/zbar_libzbar_la-win.lo \
+##	zbar/window/zbar_libzbar_la-dib.lo
+#am__objects_17 = zbar/processor/zbar_libzbar_la-null.lo \
+#	zbar/window/zbar_libzbar_la-null.lo
 am_zbar_libzbar_la_OBJECTS = zbar/zbar_libzbar_la-config.lo \
 	zbar/zbar_libzbar_la-error.lo zbar/zbar_libzbar_la-symbol.lo \
 	zbar/zbar_libzbar_la-image.lo zbar/zbar_libzbar_la-convert.lo \
@@ -338,21 +338,21 @@ zbar_libzbar_la_OBJECTS = $(am_zbar_libzbar_la_OBJECTS)
 zbar_libzbar_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 	$(zbar_libzbar_la_LDFLAGS) $(LDFLAGS) -o $@
-#am__EXEEXT_1 = test/dbg_scan$(EXEEXT)
-#am__EXEEXT_2 = zbarimg/zbarimg$(EXEEXT)
+am__EXEEXT_1 = test/dbg_scan$(EXEEXT)
+am__EXEEXT_2 = zbarimg/zbarimg$(EXEEXT)
 #am__EXEEXT_3 = zbarcam/zbarcam$(EXEEXT)
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 #am__EXEEXT_4 = test/test_video$(EXEEXT)
 am__EXEEXT_5 = test/test_jpeg$(EXEEXT)
-#am__EXEEXT_6 = test/test_gtk$(EXEEXT)
-#am__EXEEXT_7 = test/test_qt$(EXEEXT)
+am__EXEEXT_6 = test/test_gtk$(EXEEXT)
+am__EXEEXT_7 = test/test_qt$(EXEEXT)
 PROGRAMS = $(bin_PROGRAMS)
 am__test_dbg_scan_SOURCES_DIST = test/dbg_scan.cpp
-#am_test_dbg_scan_OBJECTS =  \
-#	test/test_dbg_scan-dbg_scan.$(OBJEXT)
+am_test_dbg_scan_OBJECTS =  \
+	test/test_dbg_scan-dbg_scan.$(OBJEXT)
 test_dbg_scan_OBJECTS = $(am_test_dbg_scan_OBJECTS)
-#test_dbg_scan_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-#	zbar/libzbar.la
+test_dbg_scan_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	zbar/libzbar.la
 am__objects_18 = test/test_images.$(OBJEXT)
 am_test_test_convert_OBJECTS = test/test_convert.$(OBJEXT) \
 	$(am__objects_18)
@@ -369,12 +369,12 @@ test_test_decode_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(test_test_decode_CFLAGS) \
 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
 am__test_test_gtk_SOURCES_DIST = test/test_gtk.c test/scan_video.c
-#am_test_test_gtk_OBJECTS =  \
-#	test/test_test_gtk-test_gtk.$(OBJEXT) \
-#	test/test_test_gtk-scan_video.$(OBJEXT)
+am_test_test_gtk_OBJECTS =  \
+	test/test_test_gtk-test_gtk.$(OBJEXT) \
+	test/test_test_gtk-scan_video.$(OBJEXT)
 test_test_gtk_OBJECTS = $(am_test_test_gtk_OBJECTS)
-#test_test_gtk_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-#	gtk/libzbargtk.la
+test_test_gtk_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	gtk/libzbargtk.la
 am__test_test_jpeg_SOURCES_DIST = test/test_jpeg.c
 am_test_test_jpeg_OBJECTS = test/test_jpeg.$(OBJEXT)
 test_test_jpeg_OBJECTS = $(am_test_test_jpeg_OBJECTS)
@@ -383,14 +383,14 @@ am_test_test_proc_OBJECTS = test/test_proc.$(OBJEXT) $(am__objects_18)
 test_test_proc_OBJECTS = $(am_test_test_proc_OBJECTS)
 test_test_proc_DEPENDENCIES = zbar/libzbar.la
 am__test_test_qt_SOURCES_DIST = test/test_qt.cpp test/scan_video.c
-#am_test_test_qt_OBJECTS =  \
-#	test/test_test_qt-test_qt.$(OBJEXT) \
-#	test/test_test_qt-scan_video.$(OBJEXT)
+am_test_test_qt_OBJECTS =  \
+	test/test_test_qt-test_qt.$(OBJEXT) \
+	test/test_test_qt-scan_video.$(OBJEXT)
 nodist_test_test_qt_OBJECTS =
 test_test_qt_OBJECTS = $(am_test_test_qt_OBJECTS) \
 	$(nodist_test_test_qt_OBJECTS)
-#test_test_qt_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-#	qt/libzbarqt.la
+test_test_qt_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	qt/libzbarqt.la
 am__test_test_video_SOURCES_DIST = test/test_video.c \
 	test/test_images.c test/test_images.h
 #am_test_test_video_OBJECTS =  \
@@ -407,13 +407,13 @@ zbarcam_zbarcam_OBJECTS = $(am_zbarcam_zbarcam_OBJECTS)
 #	$(am__append_37)
 am__zbarimg_zbarimg_SOURCES_DIST = zbarimg/zbarimg.c \
 	zbarimg/zbarimg.rc
-#am_zbarimg_zbarimg_OBJECTS =  \
-#	zbarimg/zbarimg_zbarimg-zbarimg.$(OBJEXT) \
-#	$(am__objects_19)
+am_zbarimg_zbarimg_OBJECTS =  \
+	zbarimg/zbarimg_zbarimg-zbarimg.$(OBJEXT) \
+	$(am__objects_19)
 zbarimg_zbarimg_OBJECTS = $(am_zbarimg_zbarimg_OBJECTS)
-#zbarimg_zbarimg_DEPENDENCIES =  \
-#	$(am__DEPENDENCIES_1) zbar/libzbar.la \
-#	$(am__append_32)
+zbarimg_zbarimg_DEPENDENCIES =  \
+	$(am__DEPENDENCIES_1) zbar/libzbar.la \
+	$(am__append_32)
 DEFAULT_INCLUDES = -I. -I$(top_builddir)/include
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__depfiles_maybe = depfiles
@@ -495,13 +495,13 @@ DIST_ARCHIVES = $(distdir).tar.gz $(distdir).tar.bz2
 GZIP_ENV = --best
 distuninstallcheck_listfiles = find . -type f -print
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /opt/git_Atom/QR/zbar/zbar-0.10/config/missing --run aclocal-1.10
-AMTAR = ${SHELL} /opt/git_Atom/QR/zbar/zbar-0.10/config/missing --run tar
+ACLOCAL = ${SHELL} /opt/git_Atom/study/QR/zbar/zbar-0.10/config/missing --run aclocal-1.10
+AMTAR = ${SHELL} /opt/git_Atom/study/QR/zbar/zbar-0.10/config/missing --run tar
 AR = ar
 AS = as
-AUTOCONF = ${SHELL} /opt/git_Atom/QR/zbar/zbar-0.10/config/missing --run autoconf
-AUTOHEADER = ${SHELL} /opt/git_Atom/QR/zbar/zbar-0.10/config/missing --run autoheader
-AUTOMAKE = ${SHELL} /opt/git_Atom/QR/zbar/zbar-0.10/config/missing --run automake-1.10
+AUTOCONF = ${SHELL} /opt/git_Atom/study/QR/zbar/zbar-0.10/config/missing --run autoconf
+AUTOHEADER = ${SHELL} /opt/git_Atom/study/QR/zbar/zbar-0.10/config/missing --run autoheader
+AUTOMAKE = ${SHELL} /opt/git_Atom/study/QR/zbar/zbar-0.10/config/missing --run automake-1.10
 AWK = mawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -524,16 +524,16 @@ ECHO_T =
 EGREP = /bin/grep -E
 EXEEXT = 
 FGREP = /bin/grep -F
-GLIB_GENMARSHAL = 
+GLIB_GENMARSHAL = glib-genmarshal
 GREP = /bin/grep
-GTK_CFLAGS = 
-GTK_LIBS = 
+GTK_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+GTK_LIBS = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lfontconfig -lfreetype -lgthread-2.0 -pthread -lglib-2.0
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LD = /usr/bin/ld
+LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
 LIBICONV = 
 LIBOBJS = 
@@ -544,11 +544,11 @@ LIPO =
 LN_S = ln -s
 LTLIBICONV = 
 LTLIBOBJS = 
-MAGICK_CFLAGS = 
-MAGICK_LIBS = 
-MAKEINFO = ${SHELL} /opt/git_Atom/QR/zbar/zbar-0.10/config/missing --run makeinfo
+MAGICK_CFLAGS = -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/include/x86_64-linux-gnu//ImageMagick-6 -I/usr/include/ImageMagick-6 -I/usr/include/x86_64-linux-gnu//ImageMagick-6 -I/usr/include/ImageMagick-6
+MAGICK_LIBS = -lMagickWand-6.Q16 -lMagickCore-6.Q16
+MAKEINFO = ${SHELL} /opt/git_Atom/study/QR/zbar/zbar-0.10/config/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
-MOC = 
+MOC = /usr/lib/x86_64-linux-gnu/qt4/bin/moc
 NM = /usr/bin/nm -B
 NMEDIT = 
 NPAPI_CFLAGS = 
@@ -565,21 +565,21 @@ PACKAGE_TARNAME = zbar
 PACKAGE_VERSION = 0.10
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
-PYGTK_CFLAGS = 
-PYGTK_CODEGEN = 
-PYGTK_DEFS = 
-PYGTK_H2DEF = 
-PYGTK_LIBS = 
+PYGTK_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/pygtk-2.0
+PYGTK_CODEGEN = pygtk-codegen-2.0
+PYGTK_DEFS = /usr/share/pygtk/2.0/defs
+PYGTK_H2DEF = /usr/share/pygobject/2.0/codegen/h2def.py
+PYGTK_LIBS = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype
 PYTHON = /usr/bin/python
-PYTHON_CFLAGS = -I/usr/include/python2.7 -I/usr/include/i386-linux-gnu/python2.7  -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security  -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes
+PYTHON_CFLAGS = -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu/python2.7  -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security  -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes
 PYTHON_CONFIG = 
 PYTHON_EXEC_PREFIX = ${exec_prefix}
 PYTHON_LIBS = 
 PYTHON_PLATFORM = linux2
 PYTHON_PREFIX = ${prefix}
 PYTHON_VERSION = 2.7
-QT_CFLAGS = 
-QT_LIBS = 
+QT_CFLAGS = -DQT_SHARED -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I/usr/include/qt4/QtCore
+QT_LIBS = -lQtGui -lQtCore
 RANLIB = ranlib
 RC = 
 RELDATE = 2009-10-23
@@ -596,13 +596,13 @@ XV_LIBS = -lXv
 X_CFLAGS = 
 X_EXTRA_LIBS = 
 X_LIBS = 
-X_PRE_LIBS = 
+X_PRE_LIBS =  -lSM -lICE
 ZGTK_LIB_VERSION = 0:2:0
 ZQT_LIB_VERSION = 0:2:0
-abs_builddir = /opt/git_Atom/QR/zbar/zbar-0.10
-abs_srcdir = /opt/git_Atom/QR/zbar/zbar-0.10
-abs_top_builddir = /opt/git_Atom/QR/zbar/zbar-0.10
-abs_top_srcdir = /opt/git_Atom/QR/zbar/zbar-0.10
+abs_builddir = /opt/git_Atom/study/QR/zbar/zbar-0.10
+abs_srcdir = /opt/git_Atom/study/QR/zbar/zbar-0.10
+abs_top_builddir = /opt/git_Atom/study/QR/zbar/zbar-0.10
+abs_top_srcdir = /opt/git_Atom/study/QR/zbar/zbar-0.10
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
@@ -612,26 +612,26 @@ am__quote =
 am__tar = ${AMTAR} chof - "$$tardir"
 am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
-build = i686-pc-linux-gnu
+build = x86_64-unknown-linux-gnu
 build_alias = 
-build_cpu = i686
+build_cpu = x86_64
 build_os = linux-gnu
-build_vendor = pc
+build_vendor = unknown
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = i686-pc-linux-gnu
+host = x86_64-unknown-linux-gnu
 host_alias = 
-host_cpu = i686
+host_cpu = x86_64
 host_os = linux-gnu
-host_vendor = pc
+host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = $(SHELL) /opt/git_Atom/QR/zbar/zbar-0.10/config/install-sh
+install_sh = $(SHELL) /opt/git_Atom/study/QR/zbar/zbar-0.10/config/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -728,11 +728,11 @@ zbar_libzbar_la_SOURCES = zbar/debug.h zbar/config.c zbar/error.h \
 	$(am__append_19) $(am__append_20) $(am__append_24) \
 	$(am__append_26) $(am__append_28)
 EXTRA_zbar_libzbar_la_SOURCES = zbar/svg.h zbar/svg.c
-#zbarimg_zbarimg_SOURCES = zbarimg/zbarimg.c \
-#	$(am__append_31)
-#zbarimg_zbarimg_CPPFLAGS = $(MAGICK_CFLAGS) $(AM_CPPFLAGS)
-#zbarimg_zbarimg_LDADD = $(MAGICK_LIBS) \
-#	zbar/libzbar.la $(am__append_32)
+zbarimg_zbarimg_SOURCES = zbarimg/zbarimg.c \
+	$(am__append_31)
+zbarimg_zbarimg_CPPFLAGS = $(MAGICK_CFLAGS) $(AM_CPPFLAGS)
+zbarimg_zbarimg_LDADD = $(MAGICK_LIBS) \
+	zbar/libzbar.la $(am__append_32)
 #zbarcam_zbarcam_SOURCES = zbarcam/zbarcam.c \
 #	$(am__append_36)
 #zbarcam_zbarcam_LDADD = zbar/libzbar.la \
@@ -747,29 +747,29 @@ python_zbar_la_SOURCES = python/zbarmodule.c python/zbarmodule.h \
     python/symboliter.c python/image.c \
     python/processor.c python/imagescanner.c python/decoder.c python/scanner.c
 
-#gtk_libzbargtk_la_CPPFLAGS = -Igtk $(GTK_CFLAGS) $(AM_CPPFLAGS)
-#gtk_libzbargtk_la_LDFLAGS = -version-info $(ZGTK_LIB_VERSION) \
-#    -export-symbols-regex "^zbar_gtk_.*" $(AM_LDFLAGS)
+gtk_libzbargtk_la_CPPFLAGS = -Igtk $(GTK_CFLAGS) $(AM_CPPFLAGS)
+gtk_libzbargtk_la_LDFLAGS = -version-info $(ZGTK_LIB_VERSION) \
+    -export-symbols-regex "^zbar_gtk_.*" $(AM_LDFLAGS)
 
-#gtk_libzbargtk_la_LIBADD = $(GTK_LIBS) zbar/libzbar.la $(AM_LIBADD)
-#dist_gtk_libzbargtk_la_SOURCES = gtk/zbargtk.c gtk/zbargtkprivate.h
-#nodist_gtk_libzbargtk_la_SOURCES = gtk/zbarmarshal.c gtk/zbarmarshal.h
-#pygtk_zbarpygtk_la_CPPFLAGS = \
-#    $(GTK_CFLAGS) $(PYTHON_CFLAGS) $(PYGTK_CFLAGS) $(AM_CPPFLAGS)
+gtk_libzbargtk_la_LIBADD = $(GTK_LIBS) zbar/libzbar.la $(AM_LIBADD)
+dist_gtk_libzbargtk_la_SOURCES = gtk/zbargtk.c gtk/zbargtkprivate.h
+nodist_gtk_libzbargtk_la_SOURCES = gtk/zbarmarshal.c gtk/zbarmarshal.h
+pygtk_zbarpygtk_la_CPPFLAGS = \
+    $(GTK_CFLAGS) $(PYTHON_CFLAGS) $(PYGTK_CFLAGS) $(AM_CPPFLAGS)
 
-#pygtk_zbarpygtk_la_LDFLAGS = -shared -module -avoid-version -export-dynamic \
-#    -export-symbols-regex initzbarpygtk
+pygtk_zbarpygtk_la_LDFLAGS = -shared -module -avoid-version -export-dynamic \
+    -export-symbols-regex initzbarpygtk
 
-#pygtk_zbarpygtk_la_LIBADD = \
-#    $(PYTHON_LIBS) $(PYGTK_LIBS) gtk/libzbargtk.la $(AM_LIBADD)
+pygtk_zbarpygtk_la_LIBADD = \
+    $(PYTHON_LIBS) $(PYGTK_LIBS) gtk/libzbargtk.la $(AM_LIBADD)
 
-#dist_pygtk_zbarpygtk_la_SOURCES = pygtk/zbarpygtkmodule.c
-#nodist_pygtk_zbarpygtk_la_SOURCES = pygtk/zbarpygtk.c
-#qt_libzbarqt_la_CPPFLAGS = -Iqt $(QT_CFLAGS) $(AM_CPPFLAGS)
-#qt_libzbarqt_la_LDFLAGS = -version-info $(ZQT_LIB_VERSION) $(AM_LDFLAGS)
-#qt_libzbarqt_la_LIBADD = $(QT_LIBS) zbar/libzbar.la $(AM_LIBADD)
-#qt_libzbarqt_la_SOURCES = qt/QZBar.cpp qt/QZBarThread.h qt/QZBarThread.cpp
-#nodist_qt_libzbarqt_la_SOURCES = qt/moc_QZBar.cpp qt/moc_QZBarThread.cpp
+dist_pygtk_zbarpygtk_la_SOURCES = pygtk/zbarpygtkmodule.c
+nodist_pygtk_zbarpygtk_la_SOURCES = pygtk/zbarpygtk.c
+qt_libzbarqt_la_CPPFLAGS = -Iqt $(QT_CFLAGS) $(AM_CPPFLAGS)
+qt_libzbarqt_la_LDFLAGS = -version-info $(ZQT_LIB_VERSION) $(AM_LDFLAGS)
+qt_libzbarqt_la_LIBADD = $(QT_LIBS) zbar/libzbar.la $(AM_LIBADD)
+qt_libzbarqt_la_SOURCES = qt/QZBar.cpp qt/QZBarThread.h qt/QZBarThread.cpp
+nodist_qt_libzbarqt_la_SOURCES = qt/moc_QZBar.cpp qt/moc_QZBarThread.cpp
 #plugin_libzbarplugin_la_SOURCES = \
 #   plugin/plugin.c
 
@@ -789,16 +789,16 @@ test_test_cpp_SOURCES = test/test_cpp.cpp
 test_test_cpp_LDADD = zbar/libzbar.la $(AM_LDADD)
 test_test_jpeg_SOURCES = test/test_jpeg.c
 test_test_jpeg_LDADD = zbar/libzbar.la $(AM_LDADD)
-#test_dbg_scan_SOURCES = test/dbg_scan.cpp
-#test_dbg_scan_CPPFLAGS = $(MAGICK_CFLAGS) $(AM_CPPFLAGS)
-#test_dbg_scan_LDADD = $(MAGICK_LIBS) -lMagick++ zbar/libzbar.la $(AM_LDADD)
-#test_test_gtk_SOURCES = test/test_gtk.c test/scan_video.c
-#test_test_gtk_CPPFLAGS = $(GTK_CFLAGS) $(AM_CPPFLAGS)
-#test_test_gtk_LDADD = $(GTK_LIBS) gtk/libzbargtk.la $(AM_LDADD)
-#test_test_qt_SOURCES = test/test_qt.cpp test/scan_video.c
-#nodist_test_test_qt_SOURCES = test/moc_test_qt.h
-#test_test_qt_CPPFLAGS = -Itest $(QT_CFLAGS) $(AM_CPPFLAGS)
-#test_test_qt_LDADD = $(QT_LIBS) qt/libzbarqt.la $(AM_LDADD)
+test_dbg_scan_SOURCES = test/dbg_scan.cpp
+test_dbg_scan_CPPFLAGS = $(MAGICK_CFLAGS) $(AM_CPPFLAGS)
+test_dbg_scan_LDADD = $(MAGICK_LIBS) -lMagick++ zbar/libzbar.la $(AM_LDADD)
+test_test_gtk_SOURCES = test/test_gtk.c test/scan_video.c
+test_test_gtk_CPPFLAGS = $(GTK_CFLAGS) $(AM_CPPFLAGS)
+test_test_gtk_LDADD = $(GTK_LIBS) gtk/libzbargtk.la $(AM_LDADD)
+test_test_qt_SOURCES = test/test_qt.cpp test/scan_video.c
+nodist_test_test_qt_SOURCES = test/moc_test_qt.h
+test_test_qt_CPPFLAGS = -Itest $(QT_CFLAGS) $(AM_CPPFLAGS)
+test_test_qt_LDADD = $(QT_LIBS) qt/libzbarqt.la $(AM_LDADD)
 
 # documentation sources
 DOCSOURCES = doc/manual.xml doc/version.xml doc/reldate.xml \
@@ -2402,7 +2402,7 @@ distcleancheck: distclean
 	  || { echo "ERROR: files left in build directory after distclean:" ; \
 	       $(distcleancheck_listfiles) ; \
 	       exit 1; } >&2
-check-local:
+#check-local:
 check-am: all-am
 	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
 	$(MAKE) $(AM_MAKEFLAGS) check-local
@@ -2573,40 +2573,40 @@ uninstall-man: uninstall-man1
 	uninstall-zincludeHEADERS
 
 
-#check-local:
-#	$(PYTHON) $(srcdir)/test/barcodetest.py
+check-local:
+	$(PYTHON) $(srcdir)/test/barcodetest.py
 
-#regress:
-#	suite='$(ZBAR_TESTS)'; \
-#	if test "x$$suite" = "x"; then suite='http://zbar.sf.net/test'; fi ; \
-#	$(PYTHON) $(srcdir)/test/barcodetest.py $$suite
+regress:
+	suite='$(ZBAR_TESTS)'; \
+	if test "x$$suite" = "x"; then suite='http://zbar.sf.net/test'; fi ; \
+	$(PYTHON) $(srcdir)/test/barcodetest.py $$suite
 
-#%.h: %.list
-#	$(GLIB_GENMARSHAL) --g-fatal-warnings --prefix=zbar_marshal \
-#	    --header $^ > $@
+%.h: %.list
+	$(GLIB_GENMARSHAL) --g-fatal-warnings --prefix=zbar_marshal \
+	    --header $^ > $@
 
-#%.c: %.list
-#	$(GLIB_GENMARSHAL) --g-fatal-warnings --prefix=zbar_marshal \
-#	    --body $^ > $@
+%.c: %.list
+	$(GLIB_GENMARSHAL) --g-fatal-warnings --prefix=zbar_marshal \
+	    --body $^ > $@
 
 # FIXME ugly hack to fixup new name... now non-standard?
-#pygtk/zbarpygtk.defs: include/zbar/zbargtk.h
-#	$(PYTHON) $(PYGTK_H2DEF) $< | \
-#	$(SED) -e 's/Z_TYPE_BAR_/ZBAR_TYPE_/' > $@
+pygtk/zbarpygtk.defs: include/zbar/zbargtk.h
+	$(PYTHON) $(PYGTK_H2DEF) $< | \
+	$(SED) -e 's/Z_TYPE_BAR_/ZBAR_TYPE_/' > $@
 
-#pygtk/%.c: pygtk/%.defs $(srcdir)/pygtk/zbarpygtk.override
-#	$(PYGTK_CODEGEN) --prefix zbarpygtk \
-#            --register $(PYGTK_DEFS)/gdk-types.defs \
-#	    --override $(srcdir)/pygtk/zbarpygtk.override $< > $@
+pygtk/%.c: pygtk/%.defs $(srcdir)/pygtk/zbarpygtk.override
+	$(PYGTK_CODEGEN) --prefix zbarpygtk \
+            --register $(PYGTK_DEFS)/gdk-types.defs \
+	    --override $(srcdir)/pygtk/zbarpygtk.override $< > $@
 
-#qt/moc_%.cpp: qt/%.h
-#	$(MOC) $(qt_libzbarqt_la_CPPFLAGS) $< -o $@
+qt/moc_%.cpp: qt/%.h
+	$(MOC) $(qt_libzbarqt_la_CPPFLAGS) $< -o $@
 
-#qt/moc_%.cpp: include/zbar/%.h
-#	$(MOC) $(qt_libzbarqt_la_CPPFLAGS) $< -o $@
+qt/moc_%.cpp: include/zbar/%.h
+	$(MOC) $(qt_libzbarqt_la_CPPFLAGS) $< -o $@
 
-#test/moc_%.h: test/%.cpp
-#	$(MOC) -i $(test_test_qt_CPPFLAGS) $< -o $@
+test/moc_%.h: test/%.cpp
+	$(MOC) -i $(test_test_qt_CPPFLAGS) $< -o $@
 
 docs: $(dist_man_MANS) #dist_doc_DATA
 .PHONY: docs

@@ -17,6 +17,7 @@ void drawTriangle()
 
     glFlush();
 }
+ 
 
 int main(int argc, char **argv)
 {

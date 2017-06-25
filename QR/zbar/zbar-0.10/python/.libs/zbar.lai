@@ -17,7 +17,7 @@ old_library=''
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' /usr/local/lib/libzbar.la -ljpeg -lpthread'
+dependency_libs=' /usr/local/lib/libzbar.la -lSM -lICE -lX11 -lXv -ljpeg -lpthread'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''

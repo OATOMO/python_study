@@ -122,7 +122,7 @@
 #define HAVE_X11_EXTENSIONS_XSHM_H 1
 
 /* Define to 1 if you have the <X11/extensions/Xvlib.h> header file. */
-/* #undef HAVE_X11_EXTENSIONS_XVLIB_H */
+#define HAVE_X11_EXTENSIONS_XVLIB_H 1
 
 /* Define as const if the declaration of iconv() needs const. */
 #define ICONV_CONST 
@@ -171,7 +171,7 @@
 #define VERSION "0.10"
 
 /* Define to 1 if the X Window System is missing or not being used. */
-#define X_DISPLAY_MISSING 1
+/* #undef X_DISPLAY_MISSING */
 
 /* Program major version (before the '.') as a number */
 #define ZBAR_VERSION_MAJOR 0
