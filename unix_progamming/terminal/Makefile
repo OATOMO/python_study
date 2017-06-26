@@ -6,4 +6,4 @@ LIB=-L/usr/lib/ -lncurses
 
 
 all:
-	gcc $(OBJ).c -o $(OBJ) $(LIB) $(INCLUDE) 
+	g++ $(OBJ).c -o $(OBJ) $(LIB) $(INCLUDE) 
