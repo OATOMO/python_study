@@ -71,8 +71,16 @@ class CircleAngle(Polygon):
         self.center_xy = center_xy
         self.r = r
         self.accuracy = accuracy
-        points_xy = []
-        for i in accuracy:
-            #jiao = float(i)/accuracy*2*math.pi
-            #x1 = x+r*math.cos(jiao)
-            #y1 = y+r*math.sin(jiao)
+        self.points_xy = []
+        for i in range(accuracy):
+            jiao = float(i)/accuracy*2*math.pi
+            x1 = center_xy.x + r*math.cos(jiao)
+            y1 = center_xy.y + r*math.sin(jiao)
+            self.point = Point(x1,y1);
+            self.points_xy.append(self.point)
+        self.points_xy.append(self.points_xy[0])
+        Polygon.__init__(self,self.points_xy,**Kwargs)
+
+    def area(self):
+        return 2*self.r*math.pi
+

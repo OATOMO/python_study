@@ -35,9 +35,13 @@ if __name__ == "__main__":
     prepare_draws.append(a)
 
     start_p = Point(40,30)
-    a=RectAngle(start_p,100,80,color='#00f0ee')
+    a=RectAngle(start_p,60,20,color='#00f0ee')
     prepare_draws.append(a)
 
+
+    start_p = Point(50,50)
+    a = CircleAngle(start_p,40,40,color='#00f0ee') 
+    prepare_draws.append(a)
 
     for shape in prepare_draws:
         print shape.area()
