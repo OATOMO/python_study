@@ -3,7 +3,8 @@
 
 
 #include <QWindow>
-#include <QOpenGlFunctions>
+//#include <QOpenGlFunctions>
+#include <QOpenGLExtraFunctions>
 #include <QBackingStore>
 
 class QPainter;
@@ -14,9 +15,8 @@ class OpenGLWindow:public QWindow,protected QOpenGLFunctions{
 	Q_OBJECT
 public:
 	explicit OpenGLWindow(QWindow * p = 0);
-	~OpenGLWindow();
 
-	virtual void render(QPainter);
+	virtual void render(QPainter *);
 	virtual void render();
 
 	virtual void initialize();

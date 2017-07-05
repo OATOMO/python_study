@@ -1,4 +1,4 @@
-LIB+=-lglut -lGL
+LIB+=-lglut -lGL -lGLU -lm 
 OBJ=
 
 all:
