@@ -12,6 +12,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = with_qt
 TEMPLATE = app
 
+LIBS+=-lGLU
 
 SOURCES += main.cpp\
         mainwindow.cpp \

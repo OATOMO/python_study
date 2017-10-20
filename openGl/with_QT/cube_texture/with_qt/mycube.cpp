@@ -1,4 +1,5 @@
 #include "mycube.h"
+#include <GL/glu.h>
 #include <QDebug>
 
 myCube::myCube(QWidget * parent):QGLWidget(parent){
@@ -30,14 +31,16 @@ void myCube::initWidget(){
 void myCube::paintGL(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
+//    glColor3f(0.1,0.2,0.3);
 
 	glTranslatef( 0.0, 0.0, -6.0);//沿坐标轴移动
 	glRotatef(m_x, 1.0, 0.0, 0.0);//旋转
 	glRotatef(m_y, 0.0, 1.0, 0.0);
 	glRotatef(m_z, 0.0, 0.0, 1.0);
 	//绑定纹理特性
-	glBindTexture(GL_TEXTURE_2D, textur);
-	glBegin(GL_QUADS);
+//    glBindTexture(GL_TEXTURE_2D, 1111/*textur*/);
+    glBindTexture(GL_TEXTURE_2D, textur);
+    glBegin(GL_QUADS);
 		glNormal3f(0.0, 0.0, 1.0);
 		glTexCoord2f(0.0, 0.0); glVertex3f(-1.0, -1.0, 1.0);
 		glTexCoord2f(1.0, 0.0); glVertex3f(1.0, -1.0, 1.0);
@@ -119,7 +122,7 @@ void myCube::loadGLTextures()
 	QImage tex;
 	QImage buf;
 
-	if (!buf.load("/home/atom/Desktop/cube.bmp"))
+    if (!buf.load("/home/atom2/Desktop/cube.bmp"))
 	{
 		qWarning("load image failed!");
 		QImage dummy(128, 128, QImage::Format_RGB32);
@@ -132,8 +135,11 @@ void myCube::loadGLTextures()
 	glGenTextures(1, &textur);
 	glBindTexture(GL_TEXTURE_2D, textur);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, 3, tex.width(), tex.height(), 0,
-		GL_RGBA, GL_UNSIGNED_BYTE, tex.bits());
+//    gluLookAt(0,1,1,0,0,1,0,0,0);
+//    gluBuild2DMipmaps(GL_TEXTURE_2D,3, tex.width(), tex.height(), GL_RGBA, GL_UNSIGNED_BYTE, tex.bits());
+
+    glTexImage2D(GL_TEXTURE_2D, 0, 3, tex.width(), tex.height(), 0,
+        GL_RGBA, GL_UNSIGNED_BYTE, tex.bits());
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
