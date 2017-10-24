@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #OATOMO app
     'learning_logs',
+    'users',
 ]
 
 MIDDLEWARE = [
